@@ -1,0 +1,41 @@
+
+//probamos solicitudes usando REST client
+
+
+POST http://localhost:3000/api/cursos/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+"id":4,
+"titulo":"aprende node.js",
+"lenguaje":"nodejs",
+"vistas":100,
+"nivel":"intermedio"
+}
+
+###
+
+PUT http://localhost:3000/api/cursos/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":2,
+    "titulo":"java intermedio con proyectos",
+    "lenguaje":"java",
+    "vistas":999999999999999999,
+    "nivel" : "intermedio"
+}
+
+###
+//CON PATCH NO ES NECESARIO PASAR LA ENTIDAD COMPLETA, SOLO LAS PROPIEDADES QUE QUEREMOS ACTUALIZAR
+PATCH http://localhost:3000/api/cursos/programacion/2  HTTP/1.1
+Content-Type: application/json
+
+{
+      "vistas":777
+
+}
+
+###
+DELETE http://localhost:3000/api/cursos/programacion/2
+
